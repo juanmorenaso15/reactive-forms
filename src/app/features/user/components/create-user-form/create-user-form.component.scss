@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2937;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.9rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f9fafb;
+
+        &:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        &.invalid {
+            border-color: #dc2626;
+            background: #fef2f2;
+
+            &:focus {
+                border-color: #dc2626;
+                box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+            }
+        }
+    }
+}
+
+.password-wrapper {
+    position: relative;
+
+    input {
+        padding-right: 3rem;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0.25rem;
+        color: #6b7280;
+
+        &:hover {
+            color: #1f2937;
+        }
+    }
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+
+    .strength {
+        font-weight: 600;
+        padding: 0.1rem 0.5rem;
+        border-radius: 4px;
+
+        &.strength-débil {
+            color: #dc2626;
+            background: #fee2e2;
+        }
+
+        &.strength-media {
+            color: #f59e0b;
+            background: #fef3c7;
+        }
+
+        &.strength-fuerte {
+            color: #16a34a;
+            background: #dcfce7;
+        }
+    }
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    input[type="checkbox"] {
+        width: auto;
+        width: 1.2rem;
+        height: 1.2rem;
+        cursor: pointer;
+        accent-color: #3b82f6;
+    }
+
+    label {
+        margin: 0;
+        cursor: pointer;
+        font-weight: 400;
+    }
+}
+
+.error-messages {
+    margin-top: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    button {
+        flex: 1;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+
+    &:hover:not(:disabled) {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+
+    &:hover {
+        background: #d1d5db;
+    }
+}
+
+// Resumen
+.summary {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h3 {
+        color: #16a34a;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .summary-content {
+        text-align: left;
+        background: #f0fdf4;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #bbf7d0;
+        margin-bottom: 1.5rem;
+
+        p {
+            margin: 0.5rem 0;
+            color: #1f2937;
+        }
+
+        strong {
+            color: #374151;
+        }
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
