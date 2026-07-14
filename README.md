@@ -1,27 +1,81 @@
-# ReactiveForms
+# Formulario Reactivo con Validaciones - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Este proyecto es un formulario de registro de usuario desarrollado con **Angular 17** utilizando el enfoque de **Reactive Forms**. Implementa validaciones en tiempo real, mensajes de error dinámicos, validadores personalizados y un resumen de los datos registrados al enviar el formulario.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Características
 
-## Code scaffolding
+- Formulario reactivo con `FormGroup` y `FormBuilder`
+- Validaciones integradas de Angular (`required`, `email`, `minLength`, `pattern`, `min`, `max`)
+- Validadores personalizados:
+  - Comparación de contraseñas (`passwordMatchValidator`)
+  - Sin espacios en el nombre de usuario (`noSpacesValidator`)
+- Mensajes de error específicos por campo (solo cuando el campo ha sido tocado o modificado)
+- Botón de envío deshabilitado mientras el formulario sea inválido
+- Resumen de datos registrados al enviar (sin incluir la contraseña)
+- **Opcionales implementados:**
+  - Mostrar/ocultar contraseña
+  - Indicador visual de fortaleza de contraseña (Débil, Media, Fuerte)
+  - Estilos visuales para campos válidos e inválidos
+  - Limpiar formulario después del registro
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Campos del Formulario
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Campo | Tipo | Validaciones |
+|-------|------|--------------|
+| Nombre completo | Texto | `required`, `minLength(3)` |
+| Correo electrónico | Email | `required`, `email` |
+| Nombre de usuario | Texto | `required`, `pattern(/^[a-zA-Z0-9_]+$/`) + sin espacios |
+| Contraseña | Password | `required`, `minLength(8)`, `pattern` (mayúscula, minúscula, número, símbolo) |
+| Confirmar contraseña | Password | `required` + validador personalizado (coincidencia) |
+| Edad | Número | `required`, `min(15)`, `max(90)` |
+| Términos y condiciones | Checkbox | `requiredTrue` |
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Requisitos Previos
 
-## Running end-to-end tests
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Node.js** (v18.13.0 o superior)
+- **npm** (v8.19.0 o superior)
+- **Angular CLI** (v17.x)
 
-## Further help
+# Verificar versiones
+node --version
+npm --version
+ng version
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## Instalación
+
+### 1. Clonar el repositorio
+
+git clone https://github.com/tu-usuario/reactive-forms.git
+cd reactive-forms
+
+### 2. Instalar dependencias
+
+npm install
+
+---
+
+## Ejecutar el proyecto
+
+ng serve
+
+---
+
+## Licencia
+
+Este proyecto es de uso educativo y no tiene restricciones de licencia.
+
+---
+
+### Autor
+
+Juan José Moreno Benavides - Desarrollo Web - Angular
